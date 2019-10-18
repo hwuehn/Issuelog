@@ -1,6 +1,7 @@
 package com.company.issuelog;
 
 import com.company.issuelog.model.Issue;
+import com.company.issuelog.model.Project;
 import com.company.issuelog.view.RootLayoutController;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -29,6 +30,12 @@ public class IssueLog extends Application {
      */
     public IssueLog() {
         // Add some sample data
+        projectData.add(new Project("ProjectA"));
+        projectData.add(new Project("ProjectB"));
+        projectData.add(new Project("ProjectC"));
+        projectData.add(new Project("ProjectD"));
+        projectData.add(new Project("ProjectE"));
+
         issueData.add(new Issue("project_1", "open","big fat bug"));
         issueData.add(new Issue("project_2", "open","error"));
         issueData.add(new Issue("project_3", "proceed","exception"));
@@ -37,11 +44,15 @@ public class IssueLog extends Application {
 
 
     /**
-     * Returns the data as an observable list of issues.
+     * Returns the data as an observable list of issues and projects.
      * @return
      */
     public ObservableList<Issue> getIssueData() {
         return issueData;
+    }
+
+    public ObservableList<Project> getProjectData() {
+        return projectData;
     }
 
     @Override

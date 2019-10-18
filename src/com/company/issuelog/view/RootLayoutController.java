@@ -2,12 +2,15 @@ package com.company.issuelog.view;
 
 import com.company.issuelog.IssueLog;
 import com.company.issuelog.model.Issue;
+import com.company.issuelog.model.Project;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+
+import javax.security.auth.callback.Callback;
 
 
 /**
@@ -20,7 +23,7 @@ import javafx.scene.control.TableView;
 public class RootLayoutController {
 
     @FXML
-    private TreeView<?> projectTreeView;
+    private ListView<Project> projectListView;
 
     @FXML
     private TableView<Issue> issueTable;
@@ -90,6 +93,9 @@ public class RootLayoutController {
         statusTableColumn.setCellValueFactory(cellData -> cellData.getValue().statusProperty());
         synopsisTableColumn.setCellValueFactory(cellData -> cellData.getValue().synopsisProperty());
 
+        // Initialize the ListView
+        // TODO
+        //projectListView.setCellFactory(Callback<ListView<Project>, ListCell<Project>> );
         // Clear person details.
         showIssueDetails(null);
 
@@ -108,6 +114,7 @@ public class RootLayoutController {
 
         // Add observable list data to the table.
         issueTable.setItems(mainApp.getIssueData());
+
     }
 
     /**
