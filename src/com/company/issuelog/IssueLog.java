@@ -22,6 +22,7 @@ public class IssueLog extends Application {
      * The data as an observable list of issues.
      */
     private ObservableList<Issue> issueData = FXCollections.observableArrayList();
+    private ObservableList<Project> projectData = FXCollections.observableArrayList();
 
     /**
      * Constructor
