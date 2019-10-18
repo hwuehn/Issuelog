@@ -49,7 +49,7 @@ public class IssueLog extends Application {
         this.primaryStage.setTitle("IssueLog - We track bugs");
 
         // Set the application icon.
-        this.primaryStage.getIcons().add(new Image("file:resources/images/bug.png"));
+        this.primaryStage.getIcons().add(new Image("file:resources.images/bugsearch.png"));
 
         initRootLayout();
     }
